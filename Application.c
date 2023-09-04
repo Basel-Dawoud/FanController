@@ -29,18 +29,18 @@ int main(){
 		/*Get the sensor value*/
 		temp= LM35_getTemperature();
 
-		/*Printing on the LCD*/
+		/* Displaying the temperature on the LCD */
 		if (temp>=100)
-			{
-				LCD_moveCursor(1,9);
-				LCD_intgerToString(temp);
-			}
+		{
+			LCD_moveCursor(1,9);
+			LCD_intgerToString(temp);
+		}
 		else
-			{
-				LCD_moveCursor(1,9);
-				LCD_intgerToString(temp);
-				LCD_displayStringRowColumn(1,11," ");
-			}
+		{
+			LCD_moveCursor(1,9);
+			LCD_intgerToString(temp);
+			LCD_displayCharacter(' ');
+		}
 
 		/* If the temperature is greater than or equal 90C turn on the fan with 75% of its maximum speed */
 		if (temp>=90)
